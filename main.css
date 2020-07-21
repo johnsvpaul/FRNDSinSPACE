@@ -3,6 +3,22 @@
     padding: 0;
 }
 
+.heading{
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+}
+p{
+    font-family: 'Montserrat', sans-serif;
+
+}
+h3{
+    font-family: 'Montserrat', sans-serif;
+
+}
+.text{
+    font-family: 'Montserrat', sans-serif;
+}
 .top{
     
     text-align: center;
@@ -19,8 +35,13 @@
 }
 
 #demo{
-    display: flex;
-    min-width: 0px;
-  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  min-width: 0px;
+  overflow: scroll;
   padding: 5px
+}
+
+.location{
+    text-align: center;
 }

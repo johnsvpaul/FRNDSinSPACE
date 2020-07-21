@@ -66,8 +66,8 @@ L.tileLayer(
             //var pic = "<div class=pic>"+html+ "</div>";
             data.people.forEach(function(data){
                 html += "<div class = pic>"
-                html += "<h3>"+data.name +"</h3>";
-                html += "<h3>"+data.country +"</h3>";
+                html += "<p>"+data.name +"</p>";
+                html += "<p>"+data.country +"</p>";
                 html +=  "<img src= "+data.biophoto+" " +"class= dp "+"/>";
                 html += "</div>"
 
