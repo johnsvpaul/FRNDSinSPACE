@@ -1,1 +1,14 @@
-#mapid { height: 100vh; }
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.top{
+    height: 200px;
+    text-align: center;
+}
+#mapid {
+    margin: auto;
+    height: 500px;
+    width: 100%; 
+}
