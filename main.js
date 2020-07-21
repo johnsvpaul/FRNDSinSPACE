@@ -29,14 +29,15 @@ L.tileLayer(
 
     */
 
-    const url = "http://api.open-notify.org/iss-now.json"; //url to api
+    const url = "https://api.wheretheiss.at/v1/satellites/25544"; //url to api
 
     let firstLoad = true;//makes sures it doesnt keep zooming on centre when we move the map
 //function to get ISS location
     async function getISS(){
       const response = await fetch(url);//api call
       const data = await response.json();
-      const {latitude, longitude} = data.iss_position;
+      console.log(data);
+      const {latitude, longitude} = data;
       document.getElementById("lat").innerHTML = latitude;
       document.getElementById("long").innerHTML = longitude;
      
@@ -46,7 +47,7 @@ L.tileLayer(
       mymap.setView([latitude,longitude], 3)
       firstLoad = false;
       }
-      //setTimeout(getISS, 6000)
+      //setTimeout(getISS, 2000)
     }
     getISS()
 
