@@ -29,7 +29,7 @@ L.tileLayer(
 
     */
 
-    const url = "https://api.open-notify.org/iss-now.json"; //url to api
+    const url = "http://api.open-notify.org/iss-now.json"; //url to api
 
     let firstLoad = true;//makes sures it doesnt keep zooming on centre when we move the map
 //function to get ISS location
