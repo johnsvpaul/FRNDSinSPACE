@@ -46,21 +46,42 @@ L.tileLayer(
       mymap.setView([latitude,longitude], 3)
       firstLoad = false;
       }
-      // setTimeout(getISS, 6000)
+      //setTimeout(getISS, 6000)
     }
     getISS()
 
     
-//friends in space
-    const url2 = "http://api.open-notify.org/astros.json";
-    async function getPeople(){
-        const response = await fetch(url2);//api call
-        const data = await response.json();
+//===========friends in space==================================
+
+    //const url2 = "http://api.open-notify.org/astros.json";
+    const url2 = "https://www.howmanypeopleareinspacerightnow.com/peopleinspace.json";
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+
+     async function getPeople(){
+        const response = fetch(proxyurl+url2)
+        const data = await (await response).json();
+            console.log(data)
+           
+            var html = "";
+            //var pic = "<div class=pic>"+html+ "</div>";
+            data.people.forEach(function(data){
+                html += "<div class = pic>"
+                html += "<h3>"+data.name +"</h3>";
+                html += "<h3>"+data.country +"</h3>";
+                html +=  "<img src= "+data.biophoto+" " +"class= dp "+"/>";
+                html += "</div>"
+
+                document.getElementById("demo").innerHTML = html;
+        
+        });
+        console.log(data.people[0].biophoto)
+
+        //var dp = data.people[0].biophoto;
+       // document.getElementById("dp").src= dp;
+
 
         
-        console.log(data.people)
-
-        document.getElementById("numpeople").innerHTML = data.number;
+        //document.getElementById("numpeople").innerHTML = dp;
         
       }
       getPeople()
