@@ -3,6 +3,7 @@
 
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -15,31 +16,100 @@
     <link rel="stylesheet" type="text/css" href="main.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500&family=Montserrat&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="//unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css"
+        type="text/css">
+    <script src="//unpkg.com/leaflet-gesture-handling"></script>
 
 
 </head>
 
 <body>
+
+
+    <!-------------nav bar--------------->
+    <div class="nav">
+        <a href="#"><img class="logo" src="/img/logo.png" alt=""></a>
+    </div>
+    <!-------------intro area--------------->
+
     <div class="top">
-        <p class="heading">Friends in space</p>
+        <div class="lefta">
+            <p class="heading a">Find Out Who's Orbiting Our Planet!</p>
+            <p class="texta"> The International Space Station (ISS) constantly flies over our planet. FRNDSinSPACE
+                allows you to track the position of the ISS and see who is currently abroad on it.</p>
+            <a href="#mapid" class="btn1">Find Position</a>
+        </div>
+        <div class="righta">
+            <img class="mainpic" src="/img/main.png" alt="">
+        </div>
     </div>
+    <!-------------people in space--------------->
+    <div id="heading"> </div>
+    <div id="demo"> </div>
+    <!-------------map--------------->
 
+    <div class="map">
+        <div class="issinfo">
+            <p class="heading a">Current Location:</p>
+            <p class="heading b"> Lat: <span class="longlat" id="lat"></span></p>
+            <p class="heading b"> Long: <span class="longlat" id="long"></span></p>
+            <p class="heading b"> Velocity: <span class="longlat" id="vel"></span> km/h</p>
+            <p class="mapinfo"></p>
+        </div>
+        <div id="mapid"></div>
 
-    <div id="demo">
-        <!---<div class = pic >--->
-        <!---<h3>name</h3>--->
-        <!---<h3>country</h3>--->
-        <!---<img src="link" class= "dp" />--->
-        <!---</div>--->
     </div>
-    <div class="location">
-        <p class="heading">Where are they right now?</p>
-        <h3> The value for latitude is: <span id="lat"></span></h3>
-        <h3>The value for longitude is: <span id="long"></span></h3>
+    <!----footer-->
+    <div class="footerarea">
+        <div class="container">
+            <div class="content">
+                <div class="col1">
+                    <img class="logo" src="img/logo2.png" alt="logo" />
+                    <p class="ft">The International Space Station (ISS) constantly flies over our planet. FRNDSinSPACE
+                        allows you
+                        to track the position of the ISS and see who is currently abroad on it.</p>
+                </div>
+
+                <div class="col2">
+                    <div class="headingc">About Us </div>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="https://news.google.com/covid19/">News Feeds</a></li>
+                    </ul>
+                </div>
+                <div class="col3">
+                    <div class="headingc">Useful Links </div>
+
+                    <ul>
+                        <li><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">WHO
+                                Information</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Coronavirus_disease_2019">Covid-19 Wikipedia</a></li>
+
+                        <li><a href="https://edition.cnn.com/interactive/2020/health/coronavirus-us-maps-and-cases/">CNN
+                                News</a></li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="footersep">
+
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; <span id="year">
+                        <script type="text/javascript">
+                            document.write(new Date().getFullYear());
+                        </script>
+                    </span> Johns Paul. All Rights Reserved.</p>
+            </div>
+
+        </div>
     </div>
-    <div id="mapid"></div>
-
-
 
 
     <script src="main.js"></script>
