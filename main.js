@@ -52,7 +52,7 @@ L.tileLayer(
       mymap.setView([latitude,longitude], 2.5)
       firstLoad = false;
       }
-      //setTimeout(getISS, 2000)
+      setTimeout(getISS, 2000)
     }
     getISS()
 
