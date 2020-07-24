@@ -110,6 +110,14 @@ h3{
 }
 .name{
     text-align: center;
+    padding-bottom: 5px;
+}
+.days{
+    text-align: center;
+}
+.day{
+    font-size: 24px;
+
 }
 .dp{
         /*margin: 0 30px; add this when screen gerts big*/
@@ -313,5 +321,9 @@ a{
         width: 90%;
     }
 }
-
+@media (max-width: 520px){
+    .btn1{
+        margin-left: 10%;
+    }
+}
      

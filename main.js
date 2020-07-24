@@ -1,3 +1,4 @@
+
 //initialise map======================
 const mymap = L.map('mapid',{
     gestureHandling: true
@@ -5,23 +6,23 @@ const mymap = L.map('mapid',{
 
 //custom ISS icon  for marker on map=================
 var issIcon = L.icon({
-    iconUrl: '/img/iss3.png',
+    iconUrl: '/img/iss.png',
     iconSize: [150, 128],
     iconAnchor: [75, 64],
     
 });
 //add marker=======================
 const marker = L.marker([0, 0], {icon: issIcon}).addTo(mymap);
-//this is open source
+//setting map style/theme - this is public ==========================/*
+
 /*
 const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const tiles = L.tileLayer(tileUrl, {attribution});
 tiles.addTo(mymap);
 */
-//this uses personal api key
 
-//setting map style/theme==========================/*
+//setting map style/theme - this uses personal API Key ==========================/*
 L.tileLayer(
     'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoiam9obnN2cGF1bCIsImEiOiJja2N1c3JqYnEwN25kMnRvNnE1d3o0NDFlIn0.V-9LIXoLHdDukr3DYTpHHw', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -29,7 +30,7 @@ L.tileLayer(
         id: 'johnsvpaul/ckcwlxkce00v81ip69gvi5kta',
         tileSize: 512,
         zoomOffset: -1,
-        accessToken: 'pk.eyJ1Ijoiam9obnN2cGF1bCIsImEiOiJja2N1c3JqYnEwN25kMnRvNnE1d3o0NDFlIn0.V-9LIXoLHdDukr3DYTpHHw'
+        accessToken: 'pk.eyJ1Ijoiam9obnN2cGF1bCIsImEiOiJja2N1c3JqYnEwN25kMnRvNnE1d3o0NDFlIn0.V-9LIXoLHdDukr3DYTpHHw' //
     }).addTo(mymap);
 
 //======================== API Section ============================
@@ -47,6 +48,7 @@ const url = "https://api.wheretheiss.at/v1/satellites/25544"; //url to api for I
       document.getElementById("lat").innerHTML = latitude.toFixed(2);
       document.getElementById("long").innerHTML = longitude.toFixed(2);
       document.getElementById("vel").innerHTML = data.velocity.toFixed(2);
+      document.getElementById("alt").innerHTML = data.altitude.toFixed(2);
   
 
       marker.setLatLng([latitude,longitude]);
@@ -70,17 +72,24 @@ const url = "https://api.wheretheiss.at/v1/satellites/25544"; //url to api for I
      async function getPeople(){
         const response = fetch(proxyurl+url2)
         const data = await (await response).json();
-            console.log(data)
+            //console.log(data)
             //heading showing no. of people on ISS
             var heading = "<div class = numpeople ><p>There are currently " +data.number + " people in space:</p></div>"
             //summary on each person in space w/ photo, country, title, and bio
             var html = "";
+            //today's date
+            var today = moment();
+
             data.people.forEach(function(data){
                 html += "<div class = pic>"
                 html +=  "<img src= "+data.biophoto+" " +"class= dp "+"/>";
                 html += "<h3 class = name>"+data.name +"</h3>";
                 html +=  "<div class = flagandtitle > <img src= "+data.countryflag+" " +"class= flag "+"/> "+ data.title+"</div>";
-                html += "<p class = bio>"+data.bio +"</p>";
+                //days spent in space
+                var launch = moment(data.launchdate);
+                var days = today.diff(launch, 'days');
+                html += "<div class = days><span class = day> "+days+"</span> <span class = name> Days in Space</span></div>";
+                //html += "<p class = bio>"+data.bio +"</p>"; //uncomment for astronaut bio
                 html += "</div>"
 
                 document.getElementById("demo").innerHTML = html;

@@ -23,6 +23,9 @@
     <!---------- google fonts ------------->
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500&family=Montserrat&display=swap"
         rel="stylesheet">
+
+    <script src="moment.js"></script>
+
     <!---------- favicon ------------->
     <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
@@ -56,10 +59,10 @@
     <div class="map">
         <div class="issinfo">
             <p class="heading a">Current Location:</p>
-            <p class="heading b"> Lat: <span class="longlat" id="lat"></span></p>
-            <p class="heading b"> Long: <span class="longlat" id="long"></span></p>
+            <p class="heading b"> Lat: <span class="longlat" id="lat"></span> </p>
+            <p class="heading b"> Long:<span class="longlat" id="long"></span></p>
             <p class="heading b"> Velocity: <span class="longlat" id="vel"></span> km/h</p>
-            <p class="mapinfo"></p>
+            <p class="heading b"> Altitude: <span class="longlat" id="alt"></span> km</p>
         </div>
         <div id="mapid"></div>
 
@@ -80,19 +83,16 @@
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="">About</a></li>
-                        <li><a href="https://news.google.com/covid19/">News Feeds</a></li>
+                        <li><a href="https://news.google.com/">News Feeds</a></li>
                     </ul>
                 </div>
                 <div class="col3">
                     <div class="headingc">Useful Links </div>
 
                     <ul>
-                        <li><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">WHO
-                                Information</a></li>
-                        <li><a href="https://en.wikipedia.org/wiki/Coronavirus_disease_2019">Covid-19 Wikipedia</a></li>
-
-                        <li><a href="https://edition.cnn.com/interactive/2020/health/coronavirus-us-maps-and-cases/">CNN
-                                News</a></li>
+                        <li><a href="https://api.nasa.gov/">NASA API's</a></li>
+                        <li><a href="https://www.google.com/search?q=space+news&oq=space+news">Space News</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/International_Space_Station">ISS Wiki</a></li>
 
                     </ul>
                 </div>
