@@ -1,0 +1,22 @@
+{
+  "name": "frndsinspace",
+  "version": "1.0.0",
+  "description": "The International Space Station (ISS) constantly flies over our planet. FRNDSinSPACE",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnsvpaul/friends-in-space.git"
+  },
+  "author": "Johns Paul",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johnsvpaul/friends-in-space/issues"
+  },
+  "homepage": "https://github.com/johnsvpaul/friends-in-space#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
