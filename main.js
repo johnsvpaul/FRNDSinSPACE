@@ -57,7 +57,7 @@ const url = "https://api.wheretheiss.at/v1/satellites/25544"; //url to api for I
       mymap.setView([latitude,longitude], 2.5)
       firstLoad = false;
       }
-      //setTimeout(getISS, 2000) //this makes sures it keeps updating the lat/long and marker positions
+      setTimeout(getISS, 2000) //this makes sures it keeps updating the lat/long and marker positions
     }
     getISS()
 
