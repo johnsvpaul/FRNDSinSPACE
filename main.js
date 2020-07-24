@@ -22,7 +22,7 @@ const tiles = L.tileLayer(tileUrl, {attribution});
 tiles.addTo(mymap);
 */
 
-//setting map style/theme - this uses personal API Key ==========================/*
+//setting map style/theme - this uses personal API Key will be removed for online version ==========================/*
 L.tileLayer(
     'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoiam9obnN2cGF1bCIsImEiOiJja2N1c3JqYnEwN25kMnRvNnE1d3o0NDFlIn0.V-9LIXoLHdDukr3DYTpHHw', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
