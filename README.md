@@ -14,7 +14,7 @@ https://github.com/johnsvpaul/friends-in-space/ </p>
 ## Prerequisites
 
 - NodeJS and NPM
-- Express (dependancy)
+- Express (dependancy) - for option 1 installation
 - Internet connection
 
 ## Installation
