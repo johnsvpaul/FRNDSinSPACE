@@ -1,16 +1,16 @@
-
+//initialise map======================
 const mymap = L.map('mapid',{
     gestureHandling: true
 }).setView([0, 0], 8);
 
-
+//custom ISS icon  for marker on map=================
 var issIcon = L.icon({
     iconUrl: '/img/iss3.png',
     iconSize: [150, 128],
     iconAnchor: [75, 64],
     
 });
-
+//add marker=======================
 const marker = L.marker([0, 0], {icon: issIcon}).addTo(mymap);
 //this is open source
 /*
@@ -20,6 +20,8 @@ const tiles = L.tileLayer(tileUrl, {attribution});
 tiles.addTo(mymap);
 */
 //this uses personal api key
+
+//setting map style/theme==========================/*
 L.tileLayer(
     'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoiam9obnN2cGF1bCIsImEiOiJja2N1c3JqYnEwN25kMnRvNnE1d3o0NDFlIn0.V-9LIXoLHdDukr3DYTpHHw', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -30,16 +32,17 @@ L.tileLayer(
         accessToken: 'pk.eyJ1Ijoiam9obnN2cGF1bCIsImEiOiJja2N1c3JqYnEwN25kMnRvNnE1d3o0NDFlIn0.V-9LIXoLHdDukr3DYTpHHw'
     }).addTo(mymap);
 
+//======================== API Section ============================
+
     
 
-    const url = "https://api.wheretheiss.at/v1/satellites/25544"; //url to api
-
+//======== API to get ISS location ===============
+const url = "https://api.wheretheiss.at/v1/satellites/25544"; //url to api for ISS lat/long
     let firstLoad = true;//makes sures it doesnt keep zooming on centre when we move the map
-//=====function to get ISS location================
+
     async function getISS(){
       const response = await fetch(url);//api call
       const data = await response.json();
-      //console.log(data);
       const {latitude, longitude} = data;
       document.getElementById("lat").innerHTML = latitude.toFixed(2);
       document.getElementById("long").innerHTML = longitude.toFixed(2);
@@ -48,20 +51,21 @@ L.tileLayer(
 
       marker.setLatLng([latitude,longitude]);
       if (firstLoad){
-          //zoom that looks good is 3
+          //zoom that looks good is  around 3
       mymap.setView([latitude,longitude], 2.5)
       firstLoad = false;
       }
-      setTimeout(getISS, 2000)
+      //setTimeout(getISS, 2000) //this makes sures it keeps updating the lat/long and marker positions
     }
     getISS()
 
     
-//===========friends in space==================================
+//============== API to get info about people in space==================================
 
     //const url2 = "http://api.open-notify.org/astros.json";
     const url2 = "https://www.howmanypeopleareinspacerightnow.com/peopleinspace.json";
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    //we send the request to the proxy url below because it adds CORS headers to the request
+    const proxyurl = "https://cors-anywhere.herokuapp.com/"; 
 
      async function getPeople(){
         const response = fetch(proxyurl+url2)
@@ -69,7 +73,7 @@ L.tileLayer(
             console.log(data)
             //heading showing no. of people on ISS
             var heading = "<div class = numpeople ><p>There are currently " +data.number + " people in space:</p></div>"
-            //people profiles
+            //summary on each person in space w/ photo, country, title, and bio
             var html = "";
             data.people.forEach(function(data){
                 html += "<div class = pic>"

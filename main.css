@@ -1,10 +1,10 @@
-/* global styles */
+/*======= global styles =========*/
 
 *{
     margin: 0;
     padding: 0;
 }
-/* nav bar */
+/*========= nav bar =========*/
 .nav{
     
     margin: 0 9%;
@@ -13,7 +13,7 @@
 .logo{
     width: 350px;
 }
-/* intro area */
+/*========= intro area ==========*/
 
 .top{
     margin-top: 60px;
@@ -70,7 +70,7 @@ h3{
 .text{
     font-family: 'Montserrat', sans-serif;
 }
- /* map area */
+ /*============ map area ============*/
  .longlat{
     font-size: 32px;
     color: black;
@@ -92,7 +92,7 @@ h3{
     margin-top: 8%;
     width: 40%;
 }
-/*=======people in space========== */
+/*======= people in space========== */
 
 .numpeople{
     font-size: 28px;
