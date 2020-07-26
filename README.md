@@ -11,6 +11,12 @@ https://frndsinspace.netlify.app/ </p>
 <p align="center" >View Github Repo at:
 https://github.com/johnsvpaul/friends-in-space/ </p>
 
+## Features
+- ISS location mapped on a map with orbital path being drawn live.
+- Track the exact location of the ISS with information such as latitude/longitude, velocity and altitude displayed
+- See how many people are currently in space with information such as name, picture, title, country of origin and days in space displayed.
+- See your own IP Location on the map
+
 ## Prerequisites
 
 - NodeJS and NPM
