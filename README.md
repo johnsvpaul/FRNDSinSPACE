@@ -44,6 +44,13 @@ Assuming you have a code editor such as VS Code or Atom you can simply install a
   - [Endpoint](https://api.wheretheiss.at/v1/satellites/25544)
 - [People in ISS](https://www.howmanypeopleareinspacerightnow.com/)
   - [Endpoint](https://www.howmanypeopleareinspacerightnow.com/peopleinspace.json)
+- [LeafletJS](https://leafletjs.com/)
+  - [Documentation](https://leafletjs.com/reference-1.1.0.html#popup)
+- [Mapbox](https://www.mapbox.com/)
+  - [Documentation](https://docs.mapbox.com/api/)
+- [ipapi](https://ipapi.co/)
+  - [Documentation](https://ipapi.co/api/#introduction)
+  - [Endpoint](https://ipapi.co/json)
 
 
 ## Included Files
