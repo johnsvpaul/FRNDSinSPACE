@@ -40,7 +40,8 @@ Assuming you have a code editor such as VS Code or Atom you can simply install a
 
 ## API's Used
 
-- [ISS location](https://wheretheiss.at/w/developer)
+- [ISS location](https://wheretheiss.at/)
+  - [Documentation](https://wheretheiss.at/w/developer)
   - [Endpoint](https://api.wheretheiss.at/v1/satellites/25544)
 - [People in ISS](https://www.howmanypeopleareinspacerightnow.com/)
   - [Endpoint](https://www.howmanypeopleareinspacerightnow.com/peopleinspace.json)
