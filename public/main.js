@@ -4,15 +4,17 @@ const mymap = L.map('mapid',{
     gestureHandling: true
 }).setView([0, 0], 8);
 
-//custom ISS icon  for marker on map=================
+//custom icons for markers on map=================
 var issIcon = L.icon({
-    iconUrl: '/public/img/iss.png',
+    iconUrl: './img/iss.png',
     iconSize: [150, 128],
     iconAnchor: [75, 64],
     
 });
-//add marker=======================
-const marker = L.marker([0, 0], {icon: issIcon}).addTo(mymap);
+
+//initialize markers=======================
+const marker = L.marker([0, 0], {icon: issIcon}).addTo(mymap);//iss location
+const marker2 = L.marker([0, 0]).addTo(mymap);// your ip location
 //setting map style/theme - this is defualt theme ==========================/*
 
 /*
@@ -34,9 +36,7 @@ L.tileLayer(
         accessToken: 'pk.eyJ1Ijoiam9obnN2cGF1bCIsImEiOiJja2N1c3JqYnEwN25kMnRvNnE1d3o0NDFlIn0.V-9LIXoLHdDukr3DYTpHHw' //
     }).addTo(mymap);
     
-    
-
-    var line = L.polyline([]).addTo(mymap);
+    var line = L.polyline([]).addTo(mymap);//orbital line path
 
     
     
@@ -70,8 +70,22 @@ const url = "https://api.wheretheiss.at/v1/satellites/25544"; //url to api for I
       setTimeout(getISS, 2000) //this makes sures it keeps updating the lat/long and marker positions
     }
     getISS()
+  //======== API to get your IP location ===============
+  const url3 = 'https://ipapi.co/json/';
 
-    
+  async function IPlocation(){
+      const response = fetch(url3)
+      const data = await (await response).json();
+      //console.log(data.longitude, data.latitude);
+      const {latitude, longitude} = data;
+  
+      marker2.setLatLng([latitude,longitude]);//setting latlong of marker2
+      marker2.bindPopup('Your IP Location: '+data.region);//adding popup to marker
+  
+  }
+  
+  IPlocation();
+  
 //============== API to get info about people in space==================================
 
     //const url2 = "http://api.open-notify.org/astros.json";
@@ -82,6 +96,7 @@ const url = "https://api.wheretheiss.at/v1/satellites/25544"; //url to api for I
      async function getPeople(){
         const response = fetch(proxyurl+url2)
         const data = await (await response).json();
+            marker.bindPopup('There are currently '+data.number+' people abroad the ISS');//adding popup to ISS marker
             //console.log(data)
             //heading showing no. of people on ISS
             var heading = "<div class = numpeople ><p>There are currently " +data.number + " people in space:</p></div>"
@@ -110,4 +125,3 @@ const url = "https://api.wheretheiss.at/v1/satellites/25544"; //url to api for I
       }
       getPeople()
 
-  
