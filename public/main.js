@@ -6,14 +6,14 @@ const mymap = L.map('mapid',{
 
 //custom ISS icon  for marker on map=================
 var issIcon = L.icon({
-    iconUrl: '/img/iss.png',
+    iconUrl: '/public/img/iss.png',
     iconSize: [150, 128],
     iconAnchor: [75, 64],
     
 });
 //add marker=======================
 const marker = L.marker([0, 0], {icon: issIcon}).addTo(mymap);
-//setting map style/theme - this is public ==========================/*
+//setting map style/theme - this is defualt theme ==========================/*
 
 /*
 const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
@@ -22,7 +22,8 @@ const tiles = L.tileLayer(tileUrl, {attribution});
 tiles.addTo(mymap);
 */
 
-//setting map style/theme - this uses personal API Key will be removed for online version ==========================/*
+//setting map  custom style/theme  ==========================/*
+
 L.tileLayer(
     'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoiam9obnN2cGF1bCIsImEiOiJja2N1c3JqYnEwN25kMnRvNnE1d3o0NDFlIn0.V-9LIXoLHdDukr3DYTpHHw', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -32,7 +33,14 @@ L.tileLayer(
         zoomOffset: -1,
         accessToken: 'pk.eyJ1Ijoiam9obnN2cGF1bCIsImEiOiJja2N1c3JqYnEwN25kMnRvNnE1d3o0NDFlIn0.V-9LIXoLHdDukr3DYTpHHw' //
     }).addTo(mymap);
+    
+    
 
+    var line = L.polyline([]).addTo(mymap);
+
+    
+    
+    
 //======================== API Section ============================
 
     
@@ -52,6 +60,8 @@ const url = "https://api.wheretheiss.at/v1/satellites/25544"; //url to api for I
   
 
       marker.setLatLng([latitude,longitude]);
+      line.addLatLng([latitude,longitude]);
+
       if (firstLoad){
           //zoom that looks good is  around 3
       mymap.setView([latitude,longitude], 2.5)
