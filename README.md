@@ -15,6 +15,7 @@ https://github.com/johnsvpaul/friends-in-space/ </p>
 - ISS location mapped on a map with orbital path being drawn live.
 - Track the exact location of the ISS with information such as latitude/longitude, velocity and altitude displayed
 - See how many people are currently in space with information such as name, picture, title, country of origin and days in space displayed.
+- See current and ongoing ISS Expeditions
 - See your own IP Location on the map
 
 ## Prerequisites
