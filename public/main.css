@@ -139,7 +139,7 @@ h3{
 }
 #demo{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   min-width: 0px;
   overflow: scroll;
   padding: 5px
@@ -370,4 +370,5 @@ td{
     font-family: 'Fira Sans', sans-serif;
     text-align: center;
     padding-bottom: 2rem;
+    padding-top: 2rem;
 }
