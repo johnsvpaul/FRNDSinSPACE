@@ -125,3 +125,17 @@ const url = "https://api.wheretheiss.at/v1/satellites/25544"; //url to api for I
       }
       getPeople()
 
+//===============
+const url4 = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=revisions&titles=List_of_International_Space_Station_expeditions&rvprop=content&rvsection=2&rvparse'
+async function missions(){
+    const response = fetch(url4)
+    const data = await (await response).json();
+    let content = data.query.pages['9835533'].revisions['0']['*']
+    document.getElementById("missions").innerHTML = content;
+
+    //console.log(content)
+    //console.log(data.query.pages[0].revisions[0].slots.main.content);
+
+}
+
+missions();
