@@ -55,6 +55,8 @@ Assuming you have a code editor such as VS Code or Atom you can simply install a
   - [Documentation](https://leafletjs.com/reference-1.1.0.html#popup)
 - [Mapbox](https://www.mapbox.com/)
   - [Documentation](https://docs.mapbox.com/api/)
+- [Wikipedia](https://en.wikipedia.org/wiki/Main_Page)
+  - [Documentation](https://www.mediawiki.org/wiki/API:Main_page)
 - [ipapi](https://ipapi.co/)
   - [Documentation](https://ipapi.co/api/#introduction)
   - [Endpoint](https://ipapi.co/json)
