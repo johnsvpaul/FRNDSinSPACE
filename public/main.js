@@ -17,25 +17,25 @@ const marker = L.marker([0, 0], {icon: issIcon}).addTo(mymap);//iss location
 const marker2 = L.marker([0, 0]).addTo(mymap);// your ip location
 //setting map style/theme - this is defualt theme ==========================/*
 
-/*
+
 const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const tiles = L.tileLayer(tileUrl, {attribution});
 tiles.addTo(mymap);
-*/
+
 
 //setting map  custom style/theme  ==========================/*
-
+/*
 L.tileLayer(
-    'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoiam9obnN2cGF1bCIsImEiOiJja2N1c3JqYnEwN25kMnRvNnE1d3o0NDFlIn0.V-9LIXoLHdDukr3DYTpHHw', {
+    'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         maxZoom: 18,
-        id: 'johnsvpaul/ckcwlxkce00v81ip69gvi5kta',
+        id: 'johnsvpaul/link here',
         tileSize: 512,
         zoomOffset: -1,
-        accessToken: 'pk.eyJ1Ijoiam9obnN2cGF1bCIsImEiOiJja2N1c3JqYnEwN25kMnRvNnE1d3o0NDFlIn0.V-9LIXoLHdDukr3DYTpHHw' //
+        accessToken: '' //
     }).addTo(mymap);
-    
+    */
     var line = L.polyline([]).addTo(mymap);//orbital line path
 
     
@@ -125,7 +125,8 @@ const url = "https://api.wheretheiss.at/v1/satellites/25544"; //url to api for I
       }
       getPeople()
 
-//===============
+//=============== wikipedia on current expeditions ================
+
 const url4 = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=revisions&titles=List_of_International_Space_Station_expeditions&rvprop=content&rvsection=2&rvparse'
 async function missions(){
     const response = fetch(proxyurl+url4)
